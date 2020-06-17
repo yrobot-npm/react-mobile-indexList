@@ -1,0 +1,82 @@
+import React from 'react'
+import './App.css'
+import IndexList from '@yrobot/react-mobile-indexlist'
+import '@yrobot/react-mobile-indexlist/lib/index.css'
+
+const mockData = [
+	'赵',
+	'钱',
+	'孙',
+	'李',
+	'周',
+	'吴',
+	'郑',
+	'王',
+	'冯',
+	'陈',
+	'褚',
+	'卫',
+	'蒋',
+	'沈',
+	'韩',
+	'杨',
+	'朱',
+	'秦',
+	'尤',
+	'许',
+	'何',
+	'吕',
+	'施',
+	'张',
+	'孔',
+	'曹',
+	'严',
+	'卫',
+	'蒋',
+	'沈',
+	'韩',
+	'杨',
+	'朱',
+	'秦',
+	'尤',
+	'许',
+	'何',
+	'吕',
+	'施',
+	'张',
+	'孔',
+	'曹',
+	'严',
+	'华',
+].map((v, i) => ({
+	name: v + i + 'xx',
+	id: i,
+}))
+
+function App() {
+	const indexKey = 'name'
+	return (
+		<div className="app">
+			<IndexList
+				// WXList={WXList}
+				list={mockData}
+				indexKey={indexKey}
+				onChange={(v) => {
+					console.log(v)
+				}}
+				onRow={(record, index) => (
+					<div className="index-list-line-holder">
+						<div className="index-list-item-name">{record[indexKey]}</div>
+						<div className="item-select-status-box">
+							<div
+								className={'select-status' + (index % 2 ? ' false' : ' true')}
+							></div>
+						</div>
+					</div>
+				)}
+			/>
+		</div>
+	)
+}
+
+export default App

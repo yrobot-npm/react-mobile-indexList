@@ -1,0 +1,44 @@
+{
+	"name": "@yrobot/react-mobile-indexlist",
+	"version": "1.0.0",
+	"description": "@yrobot 基于react实现的移动端indexList",
+	"main": "lib/index.js",
+	"files": [
+		"lib"
+	],
+	"keywords": [
+		"react",
+		"indexList",
+		"mobile",
+		"yrobot"
+	],
+	"author": "Yrobot",
+	"license": "MIT",
+	"dependencies": {
+		"pyfl": "^1.1.4",
+		"react": "^16.8.5",
+		"react-dom": "^16.8.5"
+	},
+	"scripts": {
+		"start": "rollup -c",
+		"build": "NODE_ENV=production && rm -rf lib && rm -rf src/lib && rollup -c"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Yrobot/react-mobile-indexList.git"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.4.0",
+		"@babel/preset-env": "^7.10.2",
+		"@babel/preset-react": "^7.0.0",
+		"less": "^3.11.3",
+		"less-loader": "^4.1.0",
+		"rollup": "^1.7.4",
+		"rollup-plugin-babel": "^4.3.2",
+		"rollup-plugin-filesize": "^6.0.1",
+		"rollup-plugin-node-resolve": "^4.0.1",
+		"rollup-plugin-peer-deps-external": "^2.2.0",
+		"rollup-plugin-postcss": "^2.0.3",
+		"rollup-plugin-progress": "^1.1.1"
+	}
+}

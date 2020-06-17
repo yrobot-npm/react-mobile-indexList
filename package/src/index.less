@@ -1,0 +1,76 @@
+.Yrobot-index-list {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	min-height: 50px;
+	overflow-y: scroll;
+}
+
+@second-color: rgba(0, 0, 0, 0.35);
+
+.default-index-list-line {
+	width: 100%;
+	height: 44px;
+	line-height: 44px;
+	font-size: 14px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.index-list-guide {
+	position: fixed;
+	top: 50%;
+	right: 0;
+	transform: translate(0, -50%);
+	width: 20px;
+	text-align: center;
+	color: @second-color;
+	font-size: 11px;
+	font-weight: 400;
+	padding-bottom: 20px;
+	.index-list-guide-item {
+		width: 100%;
+		height: 18px;
+		line-height: 18px;
+	}
+	.index-list-guide-dividing {
+		width: 100%;
+		height: 14px;
+	}
+}
+
+.h5-srcoll-hodler {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow-y: scroll;
+}
+
+.index-list-main {
+	position: relative;
+	width: 100%;
+	padding: 16px;
+	box-sizing: border-box;
+	.index-list-top-item {
+		position: absolute;
+		top: 0;
+	}
+	.index-list-item {
+		width: 100%;
+		padding-bottom: 12px;
+		.index-list-item-head {
+			position: relative;
+			width: 100%;
+			height: 36px;
+			line-height: 36px;
+			text-align: left;
+			font-size: 12px;
+			color: @second-color;
+			border-top: 1px solid rgba(0, 0, 0, 0.08);
+		}
+		.index-list-item-line {
+			position: relative;
+		}
+	}
+}
