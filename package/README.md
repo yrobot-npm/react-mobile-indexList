@@ -9,8 +9,8 @@
 
 ## 查看 demo
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfvc9ngkrqg30cg0qo1kf.gif)
-注意使用浏览器的手机模式查看[DEMO](https://yrobot.github.io/react-mobile-indexlist/demo/dist/index.html)
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfvc9ngkrqg30cg0qo1kf.gif)  
+注意使用浏览器的手机模式查看[DEMO](https://yrobot.github.io/react-mobile-indexList/demo/dist/index.html)
 
 ## 使用
 
