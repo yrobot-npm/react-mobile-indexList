@@ -55,6 +55,7 @@ const mockData = [
 
 function App() {
 	const indexKey = 'name'
+	const selectAll = false
 	return (
 		<div className="app">
 			<IndexList
@@ -64,6 +65,22 @@ function App() {
 				onChange={(v) => {
 					console.log(v)
 				}}
+				onTop={() => (
+					<div className="index-list-line-holder">
+						<div className="index-list-item-name">全部（默认）</div>
+						<div className="item-select-status-box">
+							<div
+								className={'select-status' + (selectAll ? ' true' : ' false')}
+							></div>
+						</div>
+					</div>
+				)}
+				onBottom={() => (
+					<div className="index-list-line-holder">
+						<div className="index-list-item-name">onBottom</div>
+						<div className="item-select-status-box"></div>
+					</div>
+				)}
 				onRow={(record, index) => (
 					<div className="index-list-line-holder">
 						<div className="index-list-item-name">{record[indexKey]}</div>

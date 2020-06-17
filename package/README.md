@@ -4,12 +4,13 @@
 
 1. 根据传入数据自动生成字母索引
 2. 点击索引自动滚到对应行
-3. 开放onRow钩子，用户可以自定义行展示
-4. 用户可以自如的在IndexList进行选中状态的管理
+3. 开放 onRow 钩子，用户可以自定义行展示
+4. 开放 onTop、onBottom，用户可以在list顶部和底部加入其他内容（提示、全选、广告、etc）
+5. 用户可以自如的在 IndexList 进行选中状态的管理
 
 ## 查看 demo
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfvc9ngkrqg30cg0qo1kf.gif)  
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gfvgapbn23g30cg0qokjm.gif)  
 注意使用浏览器的手机模式查看[DEMO](https://yrobot.github.io/react-mobile-indexList/demo/dist/index.html)
 
 ## 使用
@@ -85,6 +86,22 @@ const indexKey = 'name'
 	onChange={(v) => { // 用户点击某一行的回调, 返回此行的数据对象
 		console.log(v)
 	}}
+	onTop={() => ( // 在IndexList列表内的顶部加入一些jsx : ()=>jsx
+		<div className="index-list-line-holder">
+			<div className="index-list-item-name">全部（默认）</div>
+			<div className="item-select-status-box">
+				<div
+					className={'select-status' + (selectAll ? ' true' : ' false')}
+				></div>
+			</div>
+		</div>
+	)}
+	onBottom={() => ( // 在IndexList列表内的底部加入一些jsx : ()=>jsx
+		<div className="index-list-line-holder">
+			<div className="index-list-item-name">onBottom</div>
+			<div className="item-select-status-box"></div>
+		</div>
+	)}
 	onRow={(record, index) => ( // 每一行数据的渲染方式，默认直接展示indexKey的值： (每一行的数据对象, 数据在列表的索引)=> jsx
 		<div className="index-list-line-holder">
 			<div className="index-list-item-name">{record[indexKey]}</div>

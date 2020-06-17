@@ -75,6 +75,8 @@ const IndexList = ({
 	indexKey = 'index',
 	onChange = () => {},
 	onRow = (record, index) => defaultLineFunc(record, indexKey),
+	onTop,
+	onBottom,
 	WXList,
 }) => {
 	if (process.env.isMiniprogram && !WXList) {
@@ -109,6 +111,7 @@ const IndexList = ({
 			<ListView listRef={listRef}>
 				<div className="index-list-main">
 					<div id={preFixId(LIST_TOP_ID)} className="index-list-top-item"></div>
+					{onTop && onTop()}
 					{indexList.map((v) => {
 						const indexedDataList = listData[v] || []
 						return (
@@ -130,6 +133,7 @@ const IndexList = ({
 							</div>
 						)
 					})}
+					{onBottom && onBottom()}
 				</div>
 			</ListView>
 			<Guide indexList={indexList} scrollTo={scrollTo} />

@@ -89,6 +89,8 @@ var IndexList = function IndexList(_ref3) {
       onRow = _ref3$onRow === void 0 ? function (record, index) {
     return defaultLineFunc(record, indexKey);
   } : _ref3$onRow,
+      onTop = _ref3.onTop,
+      onBottom = _ref3.onBottom,
       WXList = _ref3.WXList;
 
   if (process.env.isMiniprogram && !WXList) {
@@ -133,7 +135,7 @@ var IndexList = function IndexList(_ref3) {
   }, /*#__PURE__*/React.createElement("div", {
     id: preFixId(LIST_TOP_ID),
     className: "index-list-top-item"
-  }), indexList.map(function (v) {
+  }), onTop && onTop(), indexList.map(function (v) {
     var indexedDataList = listData[v] || [];
     return /*#__PURE__*/React.createElement("div", {
       className: "index-list-item",
@@ -150,7 +152,7 @@ var IndexList = function IndexList(_ref3) {
         }
       }, onRow(v, i));
     }));
-  }))), /*#__PURE__*/React.createElement(Guide, {
+  }), onBottom && onBottom())), /*#__PURE__*/React.createElement(Guide, {
     indexList: indexList,
     scrollTo: scrollTo
   }));
