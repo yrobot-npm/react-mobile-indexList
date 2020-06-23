@@ -127,7 +127,10 @@ var IndexList = function IndexList(_ref3) {
   };
 
   return /*#__PURE__*/React.createElement("div", {
-    className: "Yrobot-index-list"
+    className: "Yrobot-index-list",
+    style: {
+      position: process.env.isMiniprogram ? 'absolute' : 'relative'
+    }
   }, /*#__PURE__*/React.createElement(ListView, {
     listRef: listRef
   }, /*#__PURE__*/React.createElement("div", {
