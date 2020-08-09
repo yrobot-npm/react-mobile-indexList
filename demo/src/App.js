@@ -48,6 +48,10 @@ const mockData = [
 	'曹',
 	'严',
 	'华',
+	'况',
+	'况yrobot',
+	'yrobot况',
+	'张明',
 ].map((v, i) => ({
 	name: v + i + 'xx',
 	id: i,
@@ -65,6 +69,7 @@ function App() {
 				onChange={(v) => {
 					console.log(v)
 				}}
+				// caseSensitive={true}
 				onTop={() => (
 					<div className="index-list-line-holder">
 						<div className="index-list-item-name">全部（默认）</div>

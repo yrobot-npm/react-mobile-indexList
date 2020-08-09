@@ -86,6 +86,7 @@ const indexKey = 'name'
 	onChange={(v) => { // 用户点击某一行的回调, 返回此行的数据对象
 		console.log(v)
 	}}
+	caseSensitive={false} // 大小写敏感，默认不敏感
 	onTop={() => ( // 在IndexList列表内的顶部加入一些jsx : ()=>jsx
 		<div className="index-list-line-holder">
 			<div className="index-list-item-name">全部（默认）</div>
@@ -115,3 +116,16 @@ const indexKey = 'name'
 />
 
 ```
+
+__大小写敏感：__  
+属性：caseSensitive : boolean   
+效果：    
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1ghkbcxmy0vj30b10cm74m.jpg) 
+
+
+
+## 版本记录：
+
+- 1.2.0  
+添加大小写敏感属性（caseSensitive），默认大小写不敏感 
+

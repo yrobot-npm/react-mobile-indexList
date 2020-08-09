@@ -47,11 +47,11 @@ var List = function List(_ref2) {
   }, children);
 };
 
-var doList = function doList(list, key) {
+var doList = function doList(list, key, caseSensitive) {
   var listData = {};
   list.map(function (v) {
     var firstChar = v[key].substr(0, 1);
-    var indexKey = pinyin(firstChar)[0];
+    var indexKey = caseSensitive ? pinyin(firstChar)[0] : pinyin(firstChar)[0].toLocaleUpperCase();
 
     if (listData[indexKey]) {
       listData[indexKey].push(v);
@@ -91,6 +91,8 @@ var IndexList = function IndexList(_ref3) {
   } : _ref3$onRow,
       onTop = _ref3.onTop,
       onBottom = _ref3.onBottom,
+      _ref3$caseSensitive = _ref3.caseSensitive,
+      caseSensitive = _ref3$caseSensitive === void 0 ? false : _ref3$caseSensitive,
       WXList = _ref3.WXList;
 
   if (process.env.isMiniprogram && !WXList) {
@@ -98,7 +100,7 @@ var IndexList = function IndexList(_ref3) {
     return null;
   }
 
-  var _doList = doList(list, indexKey),
+  var _doList = doList(list, indexKey, caseSensitive),
       indexList = _doList.indexList,
       listData = _doList.listData;
 
